@@ -50,10 +50,12 @@ for block in blocks:
 		else:
 			# create the right strings for the new filename
 			title = title.upper().strip()
-			title = title.replace('&','')
+			title = title.replace(' - ',' ')
 			csvYr = title.split(' ')[-1]
 			csvYr = csvYr.replace("200","20")
+			print csvYr
 			csvMth = title.split(' ')[-2][:3]
+			print csvMth
 			csvMth = convert_mth_strings(csvMth);
 			
 			filename = entity_id + "_" + csvYr + "_" + csvMth

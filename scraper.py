@@ -50,8 +50,6 @@ for block in blocks:
 		else:
 			# create the right strings for the new filename
 			title = title.upper().strip()
-			title = title.replace('- ',' ')
-			
 			csvYr = title.split(' ')[-1]
 			csvYr = csvYr.replace("200","20")
 			csvMth = title.split(' ')[-2][:3]
@@ -61,6 +59,6 @@ for block in blocks:
 		
 			todays_date = str(datetime.now())
 		
-			scraperwiki.sqlite.save(unique_keys=['l'], data={"l": fileUrl, "f": filename, "d": todays_date })
+			scraperwiki.sqlite.save(unique_keys=['l'], data={"l": fileUrl, "f": filename, "d": todays_date, "t": title})
 			
 			#print filename

@@ -49,8 +49,8 @@ for block in blocks:
 			print 'not a csv'
 		else:
 			# create the right strings for the new filename
-			title = title.upper().strip()
-			title = title.replace('&','')
+			title = title.upper().strip().getText()
+			title = title.replace('&nbsp;',' ')
 			csvYr = title.split(' ')[-1]
 			csvYr = csvYr.replace("200","20")
 			csvMth = title.split(' ')[-2][:3]

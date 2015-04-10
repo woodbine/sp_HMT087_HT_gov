@@ -49,7 +49,8 @@ for block in blocks:
 			print 'not a csv'
 		else:
 			# create the right strings for the new filename
-			title = title.upper().strip().prettify(formatter="html")
+			title = title.upper().strip()
+			title = title.prettify(formatter="html")
 			title = title.replace('&nbsp;',' ')
 			
 			csvYr = title.split(' ')[-1]

@@ -50,7 +50,7 @@ for block in blocks:
 		else:
 			# create the right strings for the new filename
 			title = title.upper().strip()
-			title = title(Text=true)
+			title = title.getText()
 			title = title.replace('&nbsp;',' ')
 			
 			csvYr = title.split(' ')[-1]

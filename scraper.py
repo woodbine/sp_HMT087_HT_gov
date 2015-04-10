@@ -51,6 +51,8 @@ for block in blocks:
 			# create the right strings for the new filename
 			title = title.upper().strip()
 			csvYr = title.split(' ')[-1]
+			print csvYr
+			
 			csvYr = csvYr.replace("200","20")
 			
 			csvMth = title.split(' ')[-2][:3]

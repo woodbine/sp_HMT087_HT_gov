@@ -62,6 +62,6 @@ for block in blocks:
 		
 			todays_date = str(datetime.now())
 		
-			# scraperwiki.sqlite.save(unique_keys=['l'], data={"l": fileUrl, "f": filename, "d": todays_date, "t": title})
+			scraperwiki.sqlite.save(unique_keys=['l'], data={"l": fileUrl, "f": filename, "d": todays_date, "t": title})
 			
 			print filename

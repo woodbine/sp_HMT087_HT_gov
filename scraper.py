@@ -50,6 +50,9 @@ for block in blocks:
 		else:
 			# create the right strings for the new filename
 			title = title.upper().strip()
+			title = title.encode('utf8')
+			print title
+			
 			csvYr = title.split(' ')[-1]
 			csvYr = csvYr.replace("200","20")
 			csvMth = title.split(' ')[-2][:3]

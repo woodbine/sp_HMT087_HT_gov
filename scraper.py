@@ -43,6 +43,7 @@ for block in blocks:
 		fileUrl = fileUrl.replace(".csv/preview",".csv")
 		
 		title = fileBlock.h2.contents[0]
+		title = fileLink.encode_contents(formatter='html').replace('£','')
 		titleTest = title.find('Download CSV')
 		
 		if titleTest == None:
@@ -54,7 +55,6 @@ for block in blocks:
 			print title
 			
 			csvYr = title.split(' ')[-1]
-			csvYr = csvYr.replace("200","20")
 			csvMth = title.split(' ')[-2][:3]
 			csvMth = convert_mth_strings(csvMth);
 			

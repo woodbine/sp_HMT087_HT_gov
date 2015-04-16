@@ -42,7 +42,7 @@ for block in blocks:
 		fileUrl = fileUrl.replace("/government","http://www.gov.uk/government")
 		fileUrl = fileUrl.replace(".csv/preview",".csv")
 		
-		title = fileBlock.h2.contents[0]
+		title = fileBlock.h2
 		title = title.encode_contents(formatter='html').replace('£','')
 		titleTest = title.find('Download CSV')
 		

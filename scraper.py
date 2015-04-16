@@ -43,7 +43,7 @@ for block in blocks:
 		fileUrl = fileUrl.replace(".csv/preview",".csv")
 		
 		title = fileBlock.h2.contents[0]
-		title = fileLink.encode_contents(formatter='html').replace('£','')
+		title = title.encode_contents(formatter='html').replace('£','')
 		titleTest = title.find('Download CSV')
 		
 		if titleTest == None:

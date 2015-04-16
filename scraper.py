@@ -53,9 +53,10 @@ for block in blocks:
 			title = title.upper().strip()
 			print title
 			csvYr = title.split(' ')[-1]
-			csvMth = title.split(' ')[-2][:3]
-			csvMth = convert_mth_strings(csvMth);
-			filename = entity_id + "_" + csvYr + "_" + csvMth
-			todays_date = str(datetime.now())
-			scraperwiki.sqlite.save(unique_keys=['l'], data={"l": fileUrl, "f": filename, "d": todays_date, "t": title})
-			print filename
+			if '2010' not in csvYr:
+				csvMth = title.split(' ')[-2][:3]
+				csvMth = convert_mth_strings(csvMth);
+				filename = entity_id + "_" + csvYr + "_" + csvMth
+				todays_date = str(datetime.now())
+				scraperwiki.sqlite.save(unique_keys=['l'], data={"l": fileUrl, "f": filename, "d": todays_date, "t": title})
+				print filename

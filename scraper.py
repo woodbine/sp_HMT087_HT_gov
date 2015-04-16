@@ -51,7 +51,6 @@ for block in blocks:
 		else:
 			# create the right strings for the new filename
 			title = title.upper().strip()
-			print title
 			csvYr = title.split(' ')[-1]
 			if '2010' not in csvYr:
 				csvMth = title.split(' ')[-2][:3]

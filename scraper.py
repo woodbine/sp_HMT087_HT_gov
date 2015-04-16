@@ -43,7 +43,7 @@ for block in blocks:
 		fileUrl = fileUrl.replace(".csv/preview",".csv")
 		
 		title = fileBlock.h2
-		title = title.encode_contents(formatter='html').replace('£','')
+		title = title.encode_contents(formatter='html').replace('&POUND;','')
 		titleTest = title.find('Download CSV')
 		
 		if titleTest == None:
@@ -52,16 +52,10 @@ for block in blocks:
 			# create the right strings for the new filename
 			title = title.upper().strip()
 			title = title.encode('utf8')
-			print title
-			
 			csvYr = title.split(' ')[-1]
 			csvMth = title.split(' ')[-2][:3]
 			csvMth = convert_mth_strings(csvMth);
-			
 			filename = entity_id + "_" + csvYr + "_" + csvMth
-		
 			todays_date = str(datetime.now())
-		
 			scraperwiki.sqlite.save(unique_keys=['l'], data={"l": fileUrl, "f": filename, "d": todays_date, "t": title})
-			
 			print filename

@@ -121,8 +121,9 @@ for block in blocks:
         else:
             title = title.upper().strip()
             csvYr = title.split(' ')[-1]
-            # if '2010' not in csvYr:
             csvMth = title.split(' ')[-2][:3]
+            if '13-31' in title.split(' ')[-2] or '1-12' in title.split(' ')[-2]:
+                csvMth = title.split(' ')[-3][:3]
             csvMth = convert_mth_strings(csvMth.upper())
             data.append([csvYr, csvMth, fileUrl])
 
